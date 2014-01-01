@@ -72,7 +72,7 @@ module Stringex
 
       # Some ORMs function as mixins not base classes and need to have a hook to reinclude
       # and re-extend ActsAsUrl methods
-      def included(base)
+      def self.included(base)
         super
 
         base.send :include, Stringex::ActsAsUrl::ActsAsUrlInstanceMethods
